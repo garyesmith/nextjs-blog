@@ -5,10 +5,14 @@ import { parse } from 'path';
 const fetchPosts = async (limit: number = 5) => {
   let parsed: any = await ky('https://6144e843411c860017d256f0.mockapi.io/api/v1/posts');
   parsed=await parsed.json();
+  const totalPosts=parsed.length;
   parsed.sort(function(a, b) {
     return b.createdAt.localeCompare(a.createdAt);
   });
-  return parsed.slice(0,limit);
+  return {
+    total: totalPosts,
+    pageData: parsed.slice(0,limit)
+  }
 }
 
 const usePosts = (limit: number) => {
