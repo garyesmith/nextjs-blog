@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { usePosts } from '../../hooks/usePosts'
 import NextLink from 'next/link';
-import { Center, Button, SimpleGrid, Box, Heading, Text, Link, keyframes } from '@chakra-ui/react'
+import { Center, Button, SimpleGrid, Box, Heading, Text, Link, Badge, HStack, keyframes } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { motion } from 'framer-motion'
 import { format } from 'date-fns'
@@ -32,7 +32,7 @@ export const PostsIndex = (): JSX.Element => {
         transition={{ duration: 0.3 }}
       />
       <SimpleGrid minChildWidth='270px' spacing='20px'>
-        {data?.map((post) => (
+        {data?.map((post, postIndex) => (
           <Box 
             key={post.id} 
             borderWidth='0' 
@@ -42,16 +42,17 @@ export const PostsIndex = (): JSX.Element => {
             padding='0'
             bgColor='white'
             animation={animation}
+            paddingBottom='5'
           >
             <NextLink href={`/posts/${encodeURIComponent(post.id)}`} passHref>
               <Link>
                 <Box 
-                  bgColor='orange.900' 
-                  paddingTop='6' 
-                  paddingBottom='2'
-                   paddingLeft='3' 
-                   paddingRight='3'>
-                    <Heading fontSize='3xl' color='white'>{post.title}</Heading>
+                  bgColor='blue.800' 
+                  paddingTop='8' 
+                  paddingBottom='4'
+                  paddingLeft='4' 
+                  paddingRight='4'>
+                    <Heading fontSize='3xl' color='white'>{post.title.charAt(0).toUpperCase() + post.title.slice(1)}</Heading>
                 </Box>
                 <Box
                   color='gray.500'
@@ -64,7 +65,10 @@ export const PostsIndex = (): JSX.Element => {
                   paddingRight='3'
                   paddingBottom='2'
                 >
-                  Posted {format(new Date(post.createdAt), 'MMM d, yyyy')}
+                  <HStack>
+                    <Text>Posted {format(new Date(post.createdAt), 'MMM d, yyyy')}</Text>
+                    {postIndex==0 && <Badge borderRadius='full' px='2' bgColor='orange' marginLeft="3">Newest</Badge>}
+                  </HStack>
                 </Box>
                 <Box 
                   paddingTop='2' 
@@ -73,13 +77,29 @@ export const PostsIndex = (): JSX.Element => {
                   paddingBottom='2'>
                   <Text noOfLines={4}>{post.description}</Text>
                 </Box>
-                <Text>By {post.authors?.map((author, index) => {
-                      let name=author.name;
-                      if (index<post.authors.length-1) name+=' and ';
-                      return name;
+                <Box
+                  color='gray.800'
+                  fontWeight='normal'
+                  letterSpacing='normal'
+                  fontSize='xs'
+                  paddingLeft='1'
+                  paddingTop='2'
+                  paddingBottom='2'
+                  ml='2'
+                >
+                  By {post.authors?.map((author, index) => {
+                      if (index<post.authors.length-1) {
+                        return (
+                          <span><b>{author.name}</b> and </span>
+                        )
+                      } else {
+                        return (
+                          <b>{author.name}</b>
+                        )                       
+                      }
                     }
                   )}
-                </Text>
+                </Box>
               </Link>
             </NextLink>
           </Box>
