@@ -1,10 +1,11 @@
 import React from 'react'
-import { useRouter } from 'next/router'
+import { Box, Text, Spacer } from '@chakra-ui/react'
 
 export const Footer = (): JSX.Element => {
   return (
-    <footer>
-        <p>&copy; 2022 All Rights Reserved.</p>
-    </footer>
+    <Box marginTop='6' marginBottom='33'>
+        <Text fontSize="xs" color='gray.600'>&copy; 2022 All Rights Reserved.</Text>
+        <Spacer h={10} />
+    </Box>
   )
 }

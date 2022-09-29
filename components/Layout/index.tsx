@@ -1,9 +1,10 @@
 import React from 'react'
+import { Container } from '@chakra-ui/react'
 
 export const Layout = ({ children }): JSX.Element => {
   return (
-    <main>
+    <Container maxW='1200px'>
       {children}
-    </main>
+    </Container>
   )
 }
