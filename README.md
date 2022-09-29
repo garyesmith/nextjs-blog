@@ -32,4 +32,4 @@ The `usePosts` hook fetches data from the API and pre-sorts it by the `createdAt
 
 ### Chakra-UI
 
-The [Chakra-UI](https://chakra-ui.com/) is used to facilitate the visual styling of the blog. This library provides extensive options for positioning, colors and sizings across responsive layouts. The styling options available from Chakra-UI make a lower-level CSS module such as  `styled-components` unneccessary.
+The [Chakra-UI](https://chakra-ui.com/) library is used for visual styling of the blog. This UI library provides extensive options for positioning, colors and sizing the content across responsive layouts. The styling options available from Chakra-UI make a lower-level CSS module such as  `styled-components` unneccessary.
