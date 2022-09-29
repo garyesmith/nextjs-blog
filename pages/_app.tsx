@@ -22,7 +22,7 @@ export const theme = extendTheme({
 export default function MyApp({ Component, pageProps }): JSX.Element {
   const [queryClient] = React.useState(() => new QueryClient())
 
-  return (
+  return (  
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <ChakraProvider theme={theme}>

@@ -2,10 +2,15 @@ import React from 'react'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 import { Layout, Header, Footer } from '../../components'
 import { fetchOnePost, fetchAllPostIds } from '../../hooks'
+import Head from 'next/head'
 
 const Post = ({ postData }): JSX.Element => {
   return (
     <Layout>
+      <Head>
+        <title>{postData.title} | A Demo Blog</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>       
       <Header />
       <h1>{postData.title}</h1>
       <Footer />

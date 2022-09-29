@@ -11,7 +11,7 @@ export const Header = (): JSX.Element => {
         <Heading as='h1' size='xl' noOfLines={1} color='white' padding='6'>
           <HStack>
             <StarIcon color="white" marginRight='1' />
-            <Link href="/">Demo Blog</Link>
+            <Link href="/">A Demo Blog</Link>
           </HStack>
         </Heading>
       </Box>
