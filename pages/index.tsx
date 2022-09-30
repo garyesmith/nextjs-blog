@@ -10,6 +10,8 @@ const Home = (): JSX.Element => {
       <Head>
         <title>A Demo Blog</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />   
       </Head>  
       <Header />
       <Introduction>Welcome to my blog. Lorem ipsum dolor sit amet.</Introduction>
