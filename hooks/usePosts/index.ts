@@ -1,9 +1,10 @@
 import ky from 'ky-universal'
 import { useQuery } from '@tanstack/react-query'
-import { parse } from 'path';
+
+const postsEndpointUri='https://6144e843411c860017d256f0.mockapi.io/api/v1/posts';
 
 const fetchPosts = async (limit: number = 5) => {
-  let parsed: any = await ky('https://6144e843411c860017d256f0.mockapi.io/api/v1/posts');
+  let parsed: any = await ky(postsEndpointUri);
   parsed=await parsed.json();
   const totalPosts=parsed.length;
   parsed.sort(function(a, b) {
@@ -20,7 +21,7 @@ const usePosts = (limit: number) => {
 }
 
 const fetchOnePost = async (id: string) => {
-  const parsed: any = await ky('https://6144e843411c860017d256f0.mockapi.io/api/v1/posts').json()
+  const parsed: any = await ky(postsEndpointUri).json()
   const result = parsed.filter((x) => x.id == id)
   return {
     id,
@@ -33,7 +34,7 @@ const useOnePost = (id: string) => {
 }
 
 const fetchAllPostIds = async () => {
-  const parsed: any = await ky('https://6144e843411c860017d256f0.mockapi.io/api/v1/posts').json()
+  const parsed: any = await ky(postsEndpointUri).json()
 
   // Returns an array that looks like this:
   // [

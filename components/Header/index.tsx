@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Box, Heading, HStack } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
@@ -24,7 +23,7 @@ export const Header = (): JSX.Element => {
             <StarIcon w={10} h={10} marginLeft='3' marginRight='2' />
           </Link>
           <Link href="/">
-            <Heading as='h1' size='xl' noOfLines={1}>A Demo Blog</Heading>
+            <Heading as='h1' size='xl' noOfLines={1} data-testid="mainHeading">A Demo Blog</Heading>
           </Link>
         </HStack>
       </Box>
