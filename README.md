@@ -5,13 +5,15 @@ A demonstration of a blog implemented with React and Next.js to read blog posts 
 
 ## Usage
 
+### Install packages
+
 - `npm install`
 
-## To run for development
+### To run for development
 
 - `npm run dev`
 
-## To build for deployment
+### To build for deployment
 
 - `npm run build`
 - `npm run start`
