@@ -5,8 +5,8 @@ import { format } from 'date-fns'
 export const PostFull = ({title, description, createdAt, updatedAt, authors, comments}): JSX.Element => {
 
     return (
-        <>
-            <Heading marginTop='12' marginBottom='2'>{title.charAt(0).toUpperCase() + title.slice(1)}</Heading>
+        <Box data-testid="postContainer">
+            <Heading marginTop='12' marginBottom='2' data-testid="postTitle">{title.charAt(0).toUpperCase() + title.slice(1)}</Heading>
             <Box
                 color='black'
                 fontWeight='normal'
@@ -17,23 +17,33 @@ export const PostFull = ({title, description, createdAt, updatedAt, authors, com
             >
                 <HStack>
                 {authors?.map((author) => (
-                    <Box key={author.id} marginRight="3"><Avatar size="xs" name={author.name} src={author.avatar} /> {author.name}</Box>
+                    <Box key={author.id} marginRight="3">
+                        <Avatar size="xs" name={author.name} src={author.avatar} /> {author.name}
+                    </Box>
                 ))}
                 </HStack>
             </Box>      
             <Text
-            color='black'
-            fontWeight='semibold'
-            letterSpacing='wide'
-            fontSize='sm'
-            textTransform='none'
-            marginBottom='2'>
+                color='black'
+                fontWeight='semibold'
+                letterSpacing='wide'
+                fontSize='sm'
+                textTransform='none'
+                data-testid="postPublishedAt"
+                marginBottom='2'
+            >
                 Published {format(new Date(createdAt), 'MMMM d, yyyy h:mm:ss')}.
                 {updatedAt.length && createdAt !== updatedAt && (
                 <>&nbsp;Updated {format(new Date(updatedAt), 'MMMM d, yyyy h:mm:ss')}</>
                 )}
             </Text>
-            <Text marginTop='6' marginBottom='3' fontSize='lg' width='95%'>
+            <Text 
+                marginTop='6' 
+                marginBottom='3' 
+                fontSize='lg' 
+                width='95%' 
+                data-testid="postDescription"
+            >
                 {description}
             </Text>
             <Box>
@@ -64,5 +74,5 @@ export const PostFull = ({title, description, createdAt, updatedAt, authors, com
                     Back to Index
                 </Button>
             </Link>
-        </>
+        </Box>
 )}

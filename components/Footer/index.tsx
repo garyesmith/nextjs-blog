@@ -6,7 +6,7 @@ export const Footer = (): JSX.Element => {
   return (
     <Box paddingTop='12' paddingBottom='12'>
       <Flex>
-        <Text fontSize="xs" color='gray.600'>&copy; {new Date().getFullYear()} Some Corp. All Rights Reserved.</Text>
+        <Text fontSize="xs" color='gray.600' data-testid="footerText">&copy; {new Date().getFullYear()} Some Corp. All Rights Reserved.</Text>
         <Spacer />
         <HStack>
           <a href="https://www.facebook.com" target="_blank"><FaFacebook color="#4267B2"/></a>

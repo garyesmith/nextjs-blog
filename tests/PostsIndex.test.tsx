@@ -5,7 +5,6 @@ import { render, screen } from "@testing-library/react";
 import { ChakraProvider } from '@chakra-ui/react'
 import { usePosts } from "../hooks/usePosts";
 
-// PostsIndex Component
 const mockedUsePosts = usePosts as jest.Mock<any>; 
 jest.mock("../hooks/usePosts");
 
@@ -40,6 +39,8 @@ describe("PostsIndex Component", () => {
 		
     	const postsContainer = getByTestId('posts_index_component');
     	expect(postsContainer).toBeInTheDocument();
+
+		// to-do: add conditions here to verify the mock data is rendering in the element
 
 	});
 
