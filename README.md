@@ -26,7 +26,7 @@ A demonstration of a blog implemented with React and Next.js to read blog posts 
 
 ### To run unit tests
 
-Basic unit tests for components have been implemented using [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro).
+Basic unit tests for components have been implemented using [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro). Test cases are located in the `/tests` folder.
 
 - `npm test`
 
