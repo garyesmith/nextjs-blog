@@ -26,7 +26,7 @@ A demonstration of a blog implemented with React and Next.js to read blog posts 
 
 ## Implementation Notes
 
-This demo uses the following stack and helper libraries:
+This demo uses the following stack:
 
 ### Next.js
 
