@@ -3,6 +3,8 @@
 
 A demonstration of a blog implemented with React and Next.js to read blog posts from an API and paginate them to 5 per page.
 
+Vercel deployment: https://nextjs-blog-eta-livid-53.vercel.app
+
 ## Usage
 
 ### Dependencies
