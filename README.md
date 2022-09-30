@@ -44,7 +44,7 @@ Tanstack is integrated with Next.js using the method detailed in their [GitHub C
 
 This integration uses Server-Side Rendering (SSR) to render the static HTML of the pages and then "hydrates" them with the dynamic data once it is available. This prevents a blank page from appearing while the data is fetched from the API.
 
-The `usePosts` hook fetches data from the API and pre-sorts it by the `createdAt` field to ensure the newest posts are always displayed first, by creation date (updates do not generally change post ordering on a blog).
+The `usePosts` hook fetches data from the API and pre-sorts it by the `createdAt` field to ensure the newest posts are always displayed first, by creation date.
 
 ### Chakra-UI
 
