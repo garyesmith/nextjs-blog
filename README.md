@@ -26,7 +26,7 @@ A demonstration of a blog implemented with React and Next.js to read blog posts 
 
 ## Implementation Notes
 
-This demo uses the following stack:
+This project uses the following stack:
 
 ### Next.js
 
@@ -48,4 +48,4 @@ The `usePosts` hook fetches data from the API and pre-sorts it by the `createdAt
 
 ### Chakra-UI
 
-The [Chakra-UI](https://chakra-ui.com/) library is used for visual styling of the blog. This UI library provides extensive options for positioning, coloring and sizing the content across responsive layouts. The styling options available from Chakra-UI make a lower-level CSS module such as  `styled-components` unneccessary.
+The [Chakra-UI](https://chakra-ui.com/) library is used for visual styling. This UI library provides extensive options for positioning, coloring and sizing the content across responsive layouts. The styling options available from Chakra-UI make a lower-level CSS module such as  `styled-components` unneccessary.
