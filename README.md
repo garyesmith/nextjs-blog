@@ -55,3 +55,7 @@ The `usePosts` hook fetches data from the API and pre-sorts it by the `createdAt
 ### Chakra-UI
 
 The [Chakra-UI](https://chakra-ui.com/) library is used for visual styling. This UI library provides extensive options for positioning, coloring and sizing the content across responsive layouts. The styling options available from Chakra-UI make a lower-level CSS module such as  `styled-components` unneccessary.
+
+## Future enhancements
+
+- Restore state of previously loaded posts when clicking back from an individual post page to the post index.
