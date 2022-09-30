@@ -61,7 +61,7 @@ export const PostFull = ({title, description, createdAt, updatedAt, authors, com
                 </Box>
                 ))}
             </Box>
-            <Link href="/">
+            <Link href="/" _hover={{ textDecoration: 'none' }}>
                 <Button
                     leftIcon={<ChevronLeftIcon />}
                     bgColor='blue.700'
