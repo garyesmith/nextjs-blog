@@ -5,11 +5,17 @@ A demonstration of a blog implemented with React and Next.js to read blog posts 
 
 ## Usage
 
-### Install packages
+### Dependencies
+
+- Node (tested with v16.10.0)
+- NPM (tested with v7.24.1)
+- TypeScript (tested with v4.8.4)
+
+### To Install
 
 - `npm install`
 
-### To run for development
+### To run in development
 
 - `npm run dev`
 
@@ -20,7 +26,7 @@ A demonstration of a blog implemented with React and Next.js to read blog posts 
 
 ## Implementation Notes
 
-This demo uses the following stack:
+This demo uses the following stack and helper libraries:
 
 ### Next.js
 
@@ -28,17 +34,17 @@ The [Next.js](https://nextjs.org/) framework is used to extend the base function
 
 ### Typescript
 
-This demonstration is coded using Typescript, with transpiling from `.ts` and `.tsx` to `.js` files occuring during `npm run dev` or `npm run build`. Typescript configuration is located in `tsconfig.json` and targets `es6`.
+Files in this project use Typescript, with transpiling occuring during `npm run dev` or `npm run build`. Typescript configuration is located in `tsconfig.json` and is set to target `es6`.
 
 ### Tanstack Query (React-Query)
 
-The [Tanstack Query](https://tanstack.com/query/v4/docs/overview) (formerly known as React-Query) library is used to fetch data from an external API endpoint located at https://6144e843411c860017d256f0.mockapi.io/api/v1/posts.
+The [Tanstack Query](https://tanstack.com/query/v4/docs/overview) (formerly *React-Query*) library is used to fetch data from an external API endpoint located at https://6144e843411c860017d256f0.mockapi.io/api/v1/posts.
 
 Tanstack is integrated with Next.js using the method detailed in their [GitHub CodeSandbox](https://codesandbox.io/s/github/tanstack/query/tree/main/examples/react/nextjs?from-embed=&file=/pages/_app.js).
 
 This integration uses Server-Side Rendering (SSR) to render the static HTML of the pages and then "hydrates" them with the dynamic data once it is available. This prevents a blank page from appearing while the data is fetched from the API.
 
-The `usePosts` hook fetches data from the API and pre-sorts it by the `createdAt` field to ensure the newest posts are always displayed first, by creation date (as updates do not generally change post ordering on a blog).
+The `usePosts` hook fetches data from the API and pre-sorts it by the `createdAt` field to ensure the newest posts are always displayed first, by creation date (updates do not generally change post ordering on a blog).
 
 ### Chakra-UI
 
