@@ -24,6 +24,12 @@ A demonstration of a blog implemented with React and Next.js to read blog posts 
 - `npm run build`
 - `npm run start`
 
+### To run unit tests
+
+Basic unit tests for components have been implemented using [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro).
+
+- `npm test`
+
 ## Implementation Notes
 
 This project uses the following stack:
@@ -34,7 +40,7 @@ The [Next.js](https://nextjs.org/) framework is used to extend the base function
 
 ### Typescript
 
-Files in this project use Typescript, with transpiling occuring during `npm run dev` or `npm run build`. Typescript configuration is located in `tsconfig.json` and is set to target `es6`.
+Typescript configuration is located in `tsconfig.json` and is set to target `es6`.
 
 ### Tanstack Query (React-Query)
 
