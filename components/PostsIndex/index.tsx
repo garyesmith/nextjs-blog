@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import { usePosts } from '../../hooks/usePosts'
 import NextLink from 'next/link';
-import { Center, Button, SimpleGrid, Box, Heading, Text, Link, Badge, HStack, keyframes } from '@chakra-ui/react'
+import { Center, Button, SimpleGrid, Box, Heading, Text, Link, Badge, HStack, Avatar, Spacer, keyframes } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { motion } from 'framer-motion'
 import { format } from 'date-fns'
 
 export const PostsIndex = (): JSX.Element => {
   const [postCount, setPostCount] = useState(5);
-  const [isMorePosts, setIsMorePosts] = useState(true);
   const { data, isLoading, isFetching } = usePosts(postCount);
 
   if (isLoading) return <div>Loading</div>
@@ -32,7 +31,7 @@ export const PostsIndex = (): JSX.Element => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
       />
-      <SimpleGrid minChildWidth='270px' spacing='20px' marginBottom='5'>
+      <SimpleGrid minChildWidth='270px' spacing='20px' marginBottom='12'>
         {data.pageData?.map((post, postIndex) => (
           <Box 
             key={postIndex} 
@@ -68,33 +67,10 @@ export const PostsIndex = (): JSX.Element => {
                   paddingBottom='2'
                 >
                   <HStack>
-                    <Text>Posted {format(new Date(post.createdAt), 'MMM d, yyyy')}</Text>
+                    <Text>Published {format(new Date(post.createdAt), 'MMM d, yyyy')}</Text>
                     {postIndex==0 && <Badge borderRadius='full' px='2' bgColor='orange' marginLeft="3">Newest</Badge>}
                   </HStack>
-                </Box>
-                <Box
-                  color='gray.800'
-                  fontWeight='normal'
-                  letterSpacing='normal'
-                  fontSize='xs'
-                  paddingLeft='1'
-                  paddingTop='2'
-                  paddingBottom='2'
-                  ml='2'
-                >
-                  By {post.authors?.map((author, index) => {
-                      if (index<post.authors.length-1) {
-                        return (
-                          <span key={index}><b>{author.name}</b> and </span>
-                        )
-                      } else {
-                        return (
-                          <b key={index}>{author.name}</b>
-                        )                       
-                      }
-                    }
-                  )}
-                </Box>                
+                </Box>               
                 <Box 
                   paddingTop='2' 
                   paddingLeft='3' 
@@ -102,6 +78,22 @@ export const PostsIndex = (): JSX.Element => {
                   paddingBottom='2'>
                   <Text noOfLines={4}>{post.description}</Text>
                 </Box>
+                
+                  <HStack margin='2'>
+                  {post.comments.length>0 && (
+                    <Text margin='2' color='gray.500' fontSize='sm'>{post.comments.length} Comments</Text>
+                  )}
+                  {post.comments.length<=0 && (
+                    <Text />
+                  )}
+                    <Spacer />
+                    <Box>
+                      {post.authors?.map((author) => (
+                        <Avatar key={author.id} size="xs" margin="1" name={author.name} src={author.avatar} />
+                      ))}
+                    </Box> 
+                  </HStack>
+                
               </Link>
             </NextLink>
           </Box>

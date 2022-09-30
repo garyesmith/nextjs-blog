@@ -13,13 +13,20 @@ export const Header = (): JSX.Element => {
         borderRadius='lg' 
         overflow='hidden' 
         marginTop='5' 
+        paddingLeft='3'
+        paddingRight='3'
+        paddingTop='6'
+        paddingBottom='6'
         marginBottom='5'
         >
-        <Heading as='h1' size='xl' noOfLines={1} color='white' padding='6'>
-          <HStack color='white' _hover={{ color: 'blue.50', cursor: 'pointer' }}>
-            <Link href="/"><><StarIcon marginRight='3' />A Demo Blog</></Link>
-          </HStack>
-        </Heading>
+        <HStack color='white' _hover={{ color: 'blue.100', cursor: 'pointer' }}>
+          <Link href="/">
+            <StarIcon w={10} h={10} marginLeft='3' marginRight='2' />
+          </Link>
+          <Link href="/">
+            <Heading as='h1' size='xl' noOfLines={1}>A Demo Blog</Heading>
+          </Link>
+        </HStack>
       </Box>
     </>
   )
