@@ -46,7 +46,7 @@ Typescript configuration is located in `tsconfig.json` and is set to target `es6
 
 ### Tanstack Query (React-Query)
 
-The [Tanstack Query](https://tanstack.com/query/v4/docs/overview) (formerly *React-Query*) library is used to fetch data from an external API endpoint located at https://6144e843411c860017d256f0.mockapi.io/api/v1/posts.
+The [Tanstack Query](https://tanstack.com/query/v4/docs/overview) (formerly *React-Query*) library is used to fetch data from an external API endpoint located at https://express-api-for-vercel.vercel.app/posts
 
 Tanstack is integrated with Next.js using the method detailed in their [GitHub CodeSandbox](https://codesandbox.io/s/github/tanstack/query/tree/main/examples/react/nextjs?from-embed=&file=/pages/_app.js).
 

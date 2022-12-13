@@ -1,7 +1,7 @@
 import ky from 'ky-universal'
 import { useQuery } from '@tanstack/react-query'
 
-const postsEndpointUri='https://6144e843411c860017d256f0.mockapi.io/api/v1/posts';
+const postsEndpointUri='https://express-api-for-vercel.vercel.app/posts';
 
 const fetchPosts = async (limit: number = 5) => {
   let parsed: any = await ky(postsEndpointUri);
