@@ -1,9 +1,9 @@
 
 # Next.js Blog Demo
 
-A demonstration of a blog implemented with React and Next.js to read blog posts from an API and paginate them to 5 per page.
+A demonstration of a blog implemented with React and Next.js to read blog posts from a sample API and paginate them to 4 per page.
 
-Vercel deployment: https://nextjs-blog-eta-livid-53.vercel.app
+Live Vercel deployment: https://nextjs-blog-eta-livid-53.vercel.app
 
 ## Usage
 
@@ -46,7 +46,7 @@ Typescript configuration is located in `tsconfig.json` and is set to target `es6
 
 ### Tanstack Query (React-Query)
 
-The [Tanstack Query](https://tanstack.com/query/v4/docs/overview) (formerly *React-Query*) library is used to fetch data from an external API endpoint located at https://express-api-for-vercel.vercel.app/posts
+The [Tanstack Query](https://tanstack.com/query/v4/docs/overview) (formerly *React-Query*) library is used to fetch data from an external API endpoint located at https://express-api-for-vercel.vercel.app/posts (code for that sample API can be found in [this repository](https://github.com/garyesmith/express-api-for-vercel).)
 
 Tanstack is integrated with Next.js using the method detailed in their [GitHub CodeSandbox](https://codesandbox.io/s/github/tanstack/query/tree/main/examples/react/nextjs?from-embed=&file=/pages/_app.js).
 
