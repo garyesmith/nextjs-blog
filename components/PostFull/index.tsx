@@ -1,11 +1,12 @@
-import { Heading, Text, Box, Button, Link, HStack, Avatar } from '@chakra-ui/react'
+import { Image, Heading, Text, Box, Button, Link, HStack, Avatar } from '@chakra-ui/react'
 import { ChevronLeftIcon, ChatIcon } from '@chakra-ui/icons'
 import { format } from 'date-fns'
 
-export const PostFull = ({title, description, createdAt, updatedAt, authors, comments}): JSX.Element => {
+export const PostFull = ({title, image, description, createdAt, updatedAt, authors, comments}): JSX.Element => {
 
     return (
         <Box data-testid="postContainer">
+            <Image src={image} alt={title.charAt(0).toUpperCase() + title.slice(1)} />
             <Heading marginTop='12' marginBottom='2' data-testid="postTitle">{title.charAt(0).toUpperCase() + title.slice(1)}</Heading>
             <Box
                 color='black'
@@ -47,7 +48,9 @@ export const PostFull = ({title, description, createdAt, updatedAt, authors, com
                 {description}
             </Text>
             <Box>
-                <Heading fontSize="lg" marginTop="6">Comments</Heading>
+                {comments.length > 0 &&
+                    <Heading fontSize="lg" marginTop="6">Comments</Heading>
+                }
                 {comments.map((comment) => (
                 <Box key={comment.id} bgColor="gray.100" borderRadius="md" marginTop="5" marginBottom="5" padding="5">
                     <HStack>

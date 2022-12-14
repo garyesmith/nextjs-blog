@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import { usePosts } from '../../hooks/usePosts'
 import NextLink from 'next/link';
-import { Center, Button, SimpleGrid, Box, Heading, Text, Link, Badge, HStack, Avatar, Spacer, ScaleFade } from '@chakra-ui/react'
+import { Center, Button, SimpleGrid, Box, Image, Heading, Text, Link, Badge, HStack, Avatar, Spacer, ScaleFade } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { format } from 'date-fns'
 
 export const PostsIndex = (): JSX.Element => {
-  const [postCount, setPostCount] = useState(5);
+  const [postCount, setPostCount] = useState(4);
   const { data, isLoading, isFetching } = usePosts(postCount);
 
   if (isLoading) return <div>Loading</div>
 
   function addMorePosts(e) {
-    setPostCount(postCount + 5);
+    setPostCount(postCount + 4);
   }
 
   return (
@@ -36,13 +36,13 @@ export const PostsIndex = (): JSX.Element => {
             >
               <NextLink href={`/posts/${encodeURIComponent(post.id)}`} passHref>
                 <Link _hover={{ textDecoration: 'none' }}>
+                <Image src={post.image} alt={post.title.charAt(0).toUpperCase() + post.title.slice(1)} />
                   <Box 
-                    bgColor='black'
                     paddingTop='3' 
-                    paddingBottom='3'
-                    paddingLeft='4' 
+                    paddingBottom='0'
+                    paddingLeft='3' 
                     paddingRight='4'>
-                      <Heading fontSize='2xl' color='white' data-testid="posts_index_heading">{post.title.charAt(0).toUpperCase() + post.title.slice(1)}</Heading>
+                      <Heading fontSize='2xl' color='black' data-testid="posts_index_heading">{post.title.charAt(0).toUpperCase() + post.title.slice(1)}</Heading>
                   </Box>
                   <Box
                     color='gray.500'

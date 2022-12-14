@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 
 const postsEndpointUri='https://express-api-for-vercel.vercel.app/posts';
 
-const fetchPosts = async (limit: number = 5) => {
+const fetchPosts = async (limit: number = 4) => {
   let parsed: any = await ky(postsEndpointUri);
   parsed=await parsed.json();
   const totalPosts=parsed.length;
